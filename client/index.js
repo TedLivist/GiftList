@@ -9,7 +9,9 @@ async function main() {
 
   const merkle = new MerkleTree(niceList)
 
-  let name = niceList[0]
+  // select random item from the list of name
+  let name = niceList[Math.floor(Math.random()*niceList.length)]
+  
   let nameIndex = niceList.findIndex((a) => a === name)
   let proof = merkle.getProof(nameIndex)
 
